@@ -58,8 +58,8 @@ services:
     networks:
       - private
 
-  chrome:
-    image: selenium/node-chrome:${SELENIUM_VERSION}
+  opera:
+    image: selenium/node-opera:${SELENIUM_VERSION}
     volumes:
       - /dev/urandom:/dev/random
     depends_on:
@@ -68,9 +68,9 @@ services:
       - HUB_PORT_4444_TCP_ADDR=hub
       - HUB_PORT_4444_TCP_PORT=${SELENIUM_PORT}
       - NODE_MAX_SESSION=1
-    entrypoint: bash -c 'SE_OPTS="-host $$HOSTNAME -port 5556" /opt/bin/entry_point.sh'
+    entrypoint: bash -c 'SE_OPTS="-host $$HOSTNAME -port 5557" /opt/bin/entry_point.sh'
     ports:
-      - "5556:5556"
+      - "5557:5557"
     deploy:
       replicas: 1
     networks:
