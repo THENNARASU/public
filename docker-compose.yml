@@ -59,7 +59,7 @@ services:
       - private
 
   chrome_debug:
-    image: selenium/node-chrome-debug
+    image: selenium/node-chrome-debug:latest
     volumes:
       - /dev/urandom:/dev/random
     depends_on:
