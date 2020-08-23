@@ -4,6 +4,7 @@ networks:
     driver: overlay
 services:
   hub:
+    restart: always
     image: selenium/hub:${SELENIUM_VERSION}
     ports:
       - "$SELENIUM_PORT:$SELENIUM_PORT"
@@ -23,6 +24,7 @@ services:
     networks:
      - private
   firefox:
+    restart: always
     image: selenium/node-firefox:${SELENIUM_VERSION}
     volumes:
       - /dev/urandom:/dev/random
@@ -59,6 +61,7 @@ services:
       - private
 
   chrome_debug:
+    restart: always
     image: selenium/node-chrome-debug:latest
     volumes:
       - /dev/urandom:/dev/random
