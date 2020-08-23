@@ -58,8 +58,8 @@ services:
     networks:
       - private
 
-  operablink:
-    image: selenium/node-operablink:${SELENIUM_VERSION}
+  chrome2:
+    image: selenium/node-chrome:${SELENIUM_VERSION}
     volumes:
       - /dev/urandom:/dev/random
     depends_on:
